@@ -17,6 +17,7 @@ public class Servicio implements ServicioLocal {
         categorias.add(new Categoria(2,"carne"));
         categorias.add(new Categoria(3,"pescado"));
         categorias.add(new Categoria(4,"postre"));
+        categorias.add(new Categoria(5,"aperitivo"));
         
         
     }
