@@ -20,20 +20,18 @@
         <h2>Busqueda por categoria.</h2>
         <br/>
         <h5> Seleccione una categoria</h5>
-        <h:panelGrid columns="4" cellpadding="10" >
-           <h:column><h:link value="" hreflang="#" ><img src="resources/Imagenes/ensalada.jpg" alt="Ensalada"/></h:link></h:column>
-           <h:column><h:link value="" hreflang="#" ><img src="resources/Imagenes/carne.jpg" alt="Carne"/></h:link></h:column>
-           <h:column><h:link value="" hreflang="#" ><img src="resources/Imagenes/pescado.jpg" alt="Pescado"/></h:link></h:column>
-           <h:column><h:link value="" hreflang="#" ><img src="resources/Imagenes/postre.jpg" alt="Postre"/></h:link></h:column>
-    
-        </h:panelGrid>
-        <h:dataTable 
-         <br/><br/>
-         <rich:dataTable value="#{busquedaMB}" id="dtListaAcciones"   var="lista" rows="15">
+        <br/><br/>
+         
+         <rich:dataTable value="#{busquedaMB.categorias}" id="dtListaAcciones"   var="categoria" rows="15">
                <rich:column>
                     <f:facet name="header">Id</f:facet>
-                        #{}
+                        #{categoria.id}
                 </rich:column> 
+             <rich:column>
+                    <f:facet name="header">Nombre</f:facet>
+                        
+                    <h:column><h:link value="" hreflang="#" ><img src="resources/Imagenes/#{categoria.nombre}.jpg" alt="Ensalada"/></h:link></h:column>
+                </rich:column>
          </rich:dataTable>
     </ui:define>
 </ui:composition>

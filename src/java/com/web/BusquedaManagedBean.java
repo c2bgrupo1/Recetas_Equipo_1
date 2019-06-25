@@ -18,10 +18,16 @@ public class BusquedaManagedBean implements Serializable{
     private List<Categoria> categorias;
     
     public BusquedaManagedBean() {
+        
     }
 
     public List<Categoria> getCategorias() {
+        categorias = servicio.getCategorias();
         return categorias;
+    }
+
+    public void setCategorias(List<Categoria> categorias) {
+        this.categorias = categorias;
     }
     
    

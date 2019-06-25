@@ -13,10 +13,10 @@ public class Servicio implements ServicioLocal {
 
     public Servicio() {
         categorias=new ArrayList<Categoria>();
-        categorias.add(new Categoria(1,"Ensaladas"));
-        categorias.add(new Categoria(2,"Carnes"));
-        categorias.add(new Categoria(3,"Pescadod"));
-        categorias.add(new Categoria(4,"Postres"));
+        categorias.add(new Categoria(1,"ensalada"));
+        categorias.add(new Categoria(2,"carne"));
+        categorias.add(new Categoria(3,"pescado"));
+        categorias.add(new Categoria(4,"postre"));
         
         
     }
