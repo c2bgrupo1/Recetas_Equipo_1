@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    template="./WEB-INF/plantillas/plantilla.xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:a4j="http://richfaces.org/a4j"
+    xmlns:rich="http://richfaces.org/rich">
+   <ui:define name="titulo">Inicio</ui:define>
+
+    <ui:define name="top">
+        <h1>Mis Recetas de Cocina -- Equipo 1</h1>
+    </ui:define>
+    
+   <ui:define name="content">
+        <h1>Mis recetas de cocina -- Equipo 1</h1>
+        <br/><br/>
+        <h2>Busqueda por categoria.</h2>
+        <br/>
+        <h5> Seleccione una categoria</h5>
+        <h:panelGrid columns="4" cellpadding="10" >
+           <h:column><h:link value="" hreflang="#" ><img src="resources/Imagenes/ensalada.jpg" alt="Ensalada"/></h:link></h:column>
+           <h:column><h:link value="" hreflang="#" ><img src="resources/Imagenes/carne.jpg" alt="Carne"/></h:link></h:column>
+           <h:column><h:link value="" hreflang="#" ><img src="resources/Imagenes/pescado.jpg" alt="Pescado"/></h:link></h:column>
+           <h:column><h:link value="" hreflang="#" ><img src="resources/Imagenes/postre.jpg" alt="Postre"/></h:link></h:column>
+    
+        </h:panelGrid>
+        <h:dataTable 
+         <br/><br/>
+         <rich:dataTable value="#{busquedaMB}" id="dtListaAcciones"   var="lista" rows="15">
+               <rich:column>
+                    <f:facet name="header">Id</f:facet>
+                        #{}
+                </rich:column> 
+         </rich:dataTable>
+    </ui:define>
+</ui:composition>
