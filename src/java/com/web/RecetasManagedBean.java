@@ -46,13 +46,10 @@ public class RecetasManagedBean implements Serializable {
         this.recetaBuscar = recetaBuscar;
     }
     
-    public String getRecetaPorId (int id){
-        recetaBuscar=servicio.getRecetaPorId(id);
-        return "detalleReceta";
-    }
-     public List<Receta> getRecetasPorCategoria(int idCategoria) {
+    
+    public List<Receta> getRecetasPorCategoria(int idCategoria) {
          return servicio.getRecetasPorCategoria(idCategoria);
-     }
+    }
      
 public String ventanaPorReceta(int idReceta){
         this.recetaBuscar=servicio.getRecetaPorId(idReceta);
