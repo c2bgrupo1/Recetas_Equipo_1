@@ -40,14 +40,14 @@
                 </rich:column> 
             <rich:column>
                     <f:facet name="header">Categoria</f:facet>
-                        #{receta.categoria}
+                        #{receta.categoria.nombre}
                 </rich:column>
             <rich:column>
                     <f:facet name="header">Detalles</f:facet>
                         <h:form>
-                            <h:commandLink class="btn-info" value="Detalles" action="#{recetasMB.ventanaPorReceta(receta.id)}">
+                            <h:commandButton class="btn-info" value="Detalles" action="#{recetasMB.ventanaPorReceta(receta.id)}">
                            
-                        </h:commandLink> 
+                            </h:commandButton> 
                     </h:form>
                 </rich:column>
          </rich:dataTable>
