@@ -8,30 +8,36 @@
     xmlns:f="http://xmlns.jcp.org/jsf/core"
     xmlns:a4j="http://richfaces.org/a4j"
     xmlns:rich="http://richfaces.org/rich">
-   <ui:define name="titulo">Inicio</ui:define>
+    <ui:define name="titulo">Inicio</ui:define>
 
     <ui:define name="top">
         <h1>Mis Recetas de Cocina -- Equipo 1</h1>
     </ui:define>
-    
-   <ui:define name="content">
+
+    <ui:define name="content">
         <h1>Mis recetas de cocina -- Equipo 1</h1>
         <br/><br/>
         <h2>Busqueda por categoria.</h2>
         <br/>
         <h5> Seleccione una categoria</h5>
         <br/><br/>
-         
-         <rich:dataTable value="#{busquedaMB.categorias}" id="dtListaAcciones"   var="categoria" rows="15">
-               <rich:column>
-                    <f:facet name="header">Id</f:facet>
-                        #{categoria.id}
-                </rich:column> 
-             <rich:column>
-                    <f:facet name="header">Nombre</f:facet>
-                        
-                    <h:column><h:link value="" hreflang="#" ><img src="resources/Imagenes/#{categoria.nombre}.jpg" title="#{categoria.nombre}" alt="#{categoria.nombre}"/></h:link></h:column>
-                </rich:column>
-         </rich:dataTable>
+
+        <rich:dataTable value="#{busquedaMB.categorias}" id="dtListaAcciones"   var="categoria" rows="15">
+            <rich:column>
+                <f:facet name="header">Id</f:facet>
+                    #{categoria.id}
+            </rich:column> 
+            <rich:column>
+                <f:facet name="header">Nombre</f:facet>
+
+                <h:column>
+                    <h:form>
+                        <h:commandLink action="#{busquedaMB.ventanaPorCategoria(categoria.id)}">
+                            <img src="resources/Imagenes/#{categoria.nombre}.jpg" title="#{categoria.nombre}" alt="#{categoria.nombre}"/>
+                        </h:commandLink>
+                    </h:form>
+                </h:column>
+            </rich:column>
+        </rich:dataTable>
     </ui:define>
 </ui:composition>
