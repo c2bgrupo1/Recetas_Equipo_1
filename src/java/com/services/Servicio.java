@@ -58,7 +58,7 @@ public class Servicio implements ServicioLocal {
                 return categoria;
             }
         }
-        return categorias.get(id-1);
+        return null;
     }
 
     public Categoria getCategoriaPorNombre(String nombre) {
