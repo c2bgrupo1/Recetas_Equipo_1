@@ -18,15 +18,20 @@
     <h:body>
         <div id="top" class="top">
             <ui:insert name="top">Top</ui:insert>
-        </div>
-        <div>
-            <div id="left">
-                <ui:insert name="left">Left</ui:insert>
+            <div class="cabecera"><img src="resources/Imagenes/equipo1_cabecera.jpg" alt=""/> </div>
+            <div class="cabecera"><h1 class="cabecera"> Mis recetas de cocina -- Equipo 1</h1>  </div>
+            <div class="menu">
+                <ul>
+                    <li><a><span>Inicio</span></a></li>
+                    <li><a><span>Recetas</span></a></li>
+                    <li><a><span>Nosotros</span></a></li>
+                </ul>
             </div>
-            <div id="content" class="left_content">
+        </div>
+        <div id="content" class="center_content">
                 <ui:insert name="content">Content</ui:insert>
-            </div>
         </div>
+
     </h:body>
 
 </html>

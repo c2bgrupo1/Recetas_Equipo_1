@@ -1,10 +1,11 @@
-
 #top {
     position: relative;
-    background-color: #036fab;
+    background-color: navy;
     color: white;
     padding: 5px;
-    margin: 0px 0px 10px 0px;
+    margin: 0px 0px 0px 0px;
+    width: 100%;
+    height: 165px;
 }
 
 #bottom {
@@ -12,13 +13,6 @@
     background-color: #c2dfef;
     padding: 5px;
     margin: 10px 0px 0px 0px;
-}
-
-#left {
-    float: left;
-    background-color: #ece3a5;
-    padding: 5px;
-    width: 150px;
 }
 
 #right {
@@ -29,9 +23,9 @@
 }
 
 .center_content {
-    position: relative;
+    position: left;
     background-color: #dddddd;
-    padding: 5px;
+    padding: 50px;
 }
 
 .left_content {
@@ -57,5 +51,23 @@
   font-weight : bold;
   text-decoration : underline;
 }
-
-
+.cabecera {
+    float:left;
+}
+h1.cabecera{
+    margin-top:50px;
+    align-content: center;
+    margin-left:450px;
+}
+.menu{
+    float:right;
+}
+.menu li{
+    float:left;
+    margin-right: 35px;
+    margin-top: 110px;
+    list-style: none;
+}
+.menu span{
+    font-size: 18px;
+}
