@@ -18,7 +18,11 @@
         <br/><br/>
          
         <rich:dataTable value="#{recetasMB.getRecetasPorCategoria(busquedaMB.categoriaBuscar.id)}" id="dtListaAcciones"   var="receta" rows="15">
-               <rich:column>
+             <rich:column>
+                    <f:facet name="header">ID</f:facet>
+                        #{receta.id}
+                </rich:column>   
+            <rich:column>
                     <f:facet name="header">Titulo</f:facet>
                         #{receta.titulo}
                 </rich:column> 
