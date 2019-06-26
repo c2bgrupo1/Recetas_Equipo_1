@@ -1,83 +1,55 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
-        xmlns:rich="http://richfaces.org/rich">
-   
-<head>
-  <title>Lista de Recetas</title>
-  <meta charset="utf-8"></meta>
-      <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"></link>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-</head>
-<body>
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    template="./WEB-INF/plantillas/plantilla.xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:rich="http://richfaces.org/rich">
+   <ui:define name="titulo">Lista Recestas</ui:define>
 
-<div class="container">
-  <h2>Lista de Recetas</h2>
-  <p>Comprueba nuestro filtro de recetas para hacer mas llevadera tu busqueda de alguna receta especial</p>  
-  <input class="form-control" id="myInput" type="text" placeholder="Search.."/>
-      <br></br>
+    <ui:define name="top">
+        <h1>Lista Recetas -- Equipo 1</h1>
+    </ui:define>
+    
+   <ui:define name="content">
       
-      
-     
-         <table class="table table-bordered table-striped" value="#{recetasMB.recetas}" var="receta">     
-  
-    <thead>
-      <tr>
-        <th>Titulo</th>
-        <th>Descripcion</th>
-        <th>Dificultad</th>
-        <th>Tiempo de elaboracion</th>
-        <th>Quieres ver los detalles de la receta?</th>
-      </tr>
-    </thead>
-    <tbody id="myTable">
-      
-      <tr>          
-          <td>#{receta.titulo}</td>
-        <td>#{receta.descripcion}</td>
-        <td>#{receta.dificultad}</td>
-        <td>#{receta.tiempo}</td>
-        <td><button type="button" class="btn btn-info">Detalles</button></td>
-      </tr>
-   
-      <tr>
-        <td>Bacalao al pil pil</td>
-        <td>Tipica receta Bizkaina de Bacalao</td>
-        <td>9</td>
-        <td>30-40 minutos</td>
-        <td><button type="button" class="btn btn-info">Detalles</button></td>
-      </tr>
-   
-   
-      <tr>
-        <td>Chipirones en su tinta</td>
-        <td>La receta se elabora con calamares rehogados a la sartén en una mezcla de diversas verduras.</td>
-        <td>8</td>
-        <td>15-20 minutos</td>
-        <td><button type="button" class="btn btn-info">Detalles</button></td>
-      </tr>
-   
-    </tbody>
-          </table>
- 
-  
-  
-
-</div>
-
-<script>
-$(document).ready(function(){
-  $("#myInput").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("#myTable tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
-});
-</script>
-
-</body>
-</html>
+        <br/><br/>
+         
+        <rich:dataTable value="#{recetasMB.getRecetasPorCategoria(busquedaMB.categoriaBuscar.id)}" id="dtListaAcciones"   var="receta" rows="15">
+             <rich:column>
+                    <f:facet name="header">ID</f:facet>
+                        #{receta.id}
+                </rich:column>   
+            <rich:column>
+                    <f:facet name="header">Titulo</f:facet>
+                        #{receta.titulo}
+                </rich:column> 
+             <rich:column>
+                    <f:facet name="header">Descripcion</f:facet>
+                        #{receta.descripcion}
+                </rich:column>
+             <rich:column>
+                    <f:facet name="header">Dificultad</f:facet>
+                        #{receta.dificultad}
+                </rich:column> 
+            <rich:column>
+                    <f:facet name="header">Tiempo</f:facet>
+                        #{receta.tiempo}
+                </rich:column> 
+            <rich:column>
+                    <f:facet name="header">Categoria</f:facet>
+                        #{receta.categoria}
+                </rich:column>
+            <rich:column>
+                    <f:facet name="header">Detalles</f:facet>
+                        <h:form>
+                            <h:commandLink class="btn-info" value="Detalles" action="#{recetasMB.ventanaPorReceta(receta.id)}">
+                           
+                        </h:commandLink>
+                    </h:form>
+                </rich:column>
+         </rich:dataTable>
+    </ui:define>
+</ui:composition>
