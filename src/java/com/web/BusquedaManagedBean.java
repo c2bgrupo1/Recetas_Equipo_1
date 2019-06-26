@@ -42,7 +42,7 @@ public class BusquedaManagedBean implements Serializable{
     
     public String ventanaPorCategoria(int idCategoria){
         this.categoriaBuscar=servicio.getCategoriaPorId(idCategoria);
-        return "listaRecetas_1";
+        return "listaRecetas";
     }
    
 }
