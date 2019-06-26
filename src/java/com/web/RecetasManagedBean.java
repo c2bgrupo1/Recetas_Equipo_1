@@ -47,6 +47,6 @@ public class RecetasManagedBean implements Serializable {
     
     public String getRecetaPorId (int id){
         recetaActual=servicio.getRecetaPorId(id);
-        return null;
+        return "detalleReceta";
     }
 }
