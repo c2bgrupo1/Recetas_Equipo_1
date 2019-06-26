@@ -20,13 +20,15 @@ import javax.enterprise.context.SessionScoped;
  * @author SISTEMAS
  */
 @Named(value = "recetasMB")
-@SessionScoped 
+@SessionScoped
 public class RecetasManagedBean implements Serializable {
 
-     @EJB private ServicioLocal servicio;
-     
+    @EJB
+    private ServicioLocal servicio;
+
     private List<Receta> recetas;
     private Receta recetaBuscar;
+
     public RecetasManagedBean() {
     }
 
@@ -45,17 +47,23 @@ public class RecetasManagedBean implements Serializable {
     public void setRecetaBuscar(Receta recetaBuscar) {
         this.recetaBuscar = recetaBuscar;
     }
-    
-    public Receta getRecetaPorId (int id){
+
+    public Receta getRecetaPorId(int id) {
         return servicio.getRecetaPorId(id);
-        
+
     }
-     public List<Receta> getRecetasPorCategoria(int idCategoria) {
-         return servicio.getRecetasPorCategoria(idCategoria);
-     }
-     
-public String ventanaPorReceta(int idReceta){
-        this.recetaBuscar=servicio.getRecetaPorId(idReceta);
+
+    public List<Receta> getRecetasPorCategoria(int idCategoria) {
+        return servicio.getRecetasPorCategoria(idCategoria);
+    }
+
+    public String ventanaPorReceta(int idReceta) {
+        this.recetaBuscar = servicio.getRecetaPorId(idReceta);
         return "detallesReceta";
+    }
+    
+    public String volverListadoRecetas() {
+        //this.recetaBuscar = servicio.getRecetaPorId(idReceta);
+        return "listaRecetas";
     }
 }

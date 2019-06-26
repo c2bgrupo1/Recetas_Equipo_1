@@ -23,6 +23,10 @@
                 <h5>Dificultad: #{recetasMB.recetaBuscar.dificultad}</h5>
                 <h5>Tiempo estimado: #{recetasMB.recetaBuscar.tiempo}</h5>
 
+                <h:form>
+                    <p><h:commandLink action="#{recetasMB.volverListadoRecetas()}" value="Volver al listado de recetas"/></p>
+                </h:form>
+                
             </ui:define>
 
         </ui:composition>
