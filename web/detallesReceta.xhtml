@@ -1,13 +1,31 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
-    <h:head>
-        <title></title>
-    </h:head>
-    <h:body>
-        #{recetasMB.recetaBuscar.id}
-       
-    </h:body>
-</html>
 
+    <body>
+
+
+        <ui:composition template="./WEB-INF/plantillas/plantilla.xhtml">
+
+            <ui:define name="content">
+                <h1>#{recetasMB.recetaBuscar.titulo}</h1>
+                <h:panelGrid columns="2">
+                    <h:column>
+                        <h4>#{recetasMB.recetaBuscar.descripcion}</h4>
+                    </h:column>
+                    <h:column>
+                        <img src="resources/Imagenes/Recetas/#{recetasMB.recetaBuscar.categoria.nombre}/Receta#{recetasMB.recetaBuscar.id}.jpg" title="#{recetasMB.recetaBuscar.titulo}" 
+                             alt="#{recetasMB.recetaBuscar.titulo}"/>
+                    </h:column>
+                </h:panelGrid>
+                <h5>Dificultad: #{recetasMB.recetaBuscar.dificultad}</h5>
+                <h5>Tiempo estimado: #{recetasMB.recetaBuscar.tiempo}</h5>
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
