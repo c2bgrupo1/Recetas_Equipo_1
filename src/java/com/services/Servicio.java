@@ -72,6 +72,16 @@ public class Servicio implements ServicioLocal {
     public Receta getRecetaPorId(int id) {
         return recetas.get(id);
     }
+    
+    public List<Receta> getRecetasPorCategoria(int idCategoria) {
+        List<Receta> listaRecetas=new ArrayList<Receta>();
+        for(Receta receta:recetas){
+            if (receta.getCategoria().getId()== idCategoria) {
+                listaRecetas.add(receta);
+            }
+        }
+        return listaRecetas;
+    }
 
     
     

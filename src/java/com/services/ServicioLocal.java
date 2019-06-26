@@ -13,5 +13,6 @@ public interface ServicioLocal {
      public Categoria getCategoriaPorNombre(String nombre);
      public List<Receta> getRecetas() ;
      public Receta getRecetaPorId(int id);
+     public List<Receta> getRecetasPorCategoria(int idCategoria);
     
 }
