@@ -6,7 +6,6 @@
     template="./WEB-INF/plantillas/plantilla.xhtml"
     xmlns:h="http://xmlns.jcp.org/jsf/html"
     xmlns:f="http://xmlns.jcp.org/jsf/core"
-    xmlns:a4j="http://richfaces.org/a4j"
     xmlns:rich="http://richfaces.org/rich">
    <ui:define name="titulo">Lista Recestas</ui:define>
 
@@ -30,12 +29,22 @@
              <rich:column>
                     <f:facet name="header">Dificultad</f:facet>
                         #{receta.dificultad}
-                </rich:column> <rich:column>
+                </rich:column> 
+            <rich:column>
                     <f:facet name="header">Tiempo</f:facet>
                         #{receta.tiempo}
-                </rich:column> <rich:column>
+                </rich:column> 
+            <rich:column>
                     <f:facet name="header">Categoria</f:facet>
                         #{receta.categoria}
+                </rich:column>
+            <rich:column>
+                    <f:facet name="header">Detalles</f:facet>
+                        <h:form>
+                            <h:commandLink class="btn-info" value="Detalles" action="#{recetasMB.ventanaPorReceta(receta.id)}">
+                           
+                        </h:commandLink>
+                    </h:form>
                 </rich:column>
          </rich:dataTable>
     </ui:define>
