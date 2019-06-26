@@ -53,6 +53,11 @@ public class Servicio implements ServicioLocal {
     }
 
     public Categoria getCategoriaPorId(int id) {
+        for(Categoria categoria:categorias){
+            if (categoria.getId()== id) {
+                return categoria;
+            }
+        }
         return categorias.get(id-1);
     }
 
@@ -70,7 +75,12 @@ public class Servicio implements ServicioLocal {
     }
 
     public Receta getRecetaPorId(int id) {
-        return recetas.get(id);
+        for(Receta receta:recetas){
+            if (receta.getId()== id) {
+                return receta;
+            }
+        }
+        return null;
     }
     
     public List<Receta> getRecetasPorCategoria(int idCategoria) {
